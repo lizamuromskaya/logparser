@@ -24,19 +24,19 @@ b. Returns the following:
 
 ## Installation ##
 
-Clone this repo
+1. [Clone this repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-Install [ruby v3.0.2](https://www.ruby-lang.org/en/documentation/installation/)
+2. Install [ruby v3.0.2](https://www.ruby-lang.org/en/documentation/installation/)
 
-Run bundle install
+3. Run bundle install
 ```bash
 bundle install
 ```
 
 ## Usage ##
-Install app
+1. Install app(#installation)
 
-Run app
+2. Run app
 ```bash
 ruby parser.rb webserver.log
 ```
