@@ -1,18 +1,21 @@
 # frozen_string_literal: true
 
 require_relative '../../spec_helper'
-require_relative '../../../lib/validations/validations'
+require_relative '../../../lib/validations/file_validations'
 
 RSpec.describe FileValidations do
-  subject { described_class.new.validate_file(file_path) }
+  let(:validations_rules) { described_class.new.validate_file(file_path) }
+
   describe '#validate_file' do
     context 'when file is correct' do
       let(:file_path) { 'spec/fixtures/webserver.log' }
+
       before do
-        allow(FileValidations).to receive(:new).and_return(subject)
+        allow(described_class).to receive(:new).and_return(validations_rules)
       end
+
       it 'does not raise an error' do
-        expect { subject }.not_to raise_error
+        expect { validations_rules }.not_to raise_error
       end
     end
 
