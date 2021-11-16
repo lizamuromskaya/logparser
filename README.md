@@ -34,7 +34,7 @@ bundle install
 ```
 
 ## Usage ##
-1. Install app(#installation)
+1. [Install app](#installation)
 
 2. Run app
 ```bash
