@@ -4,7 +4,6 @@ class LogParser
   def initialize(file_path, file_validations)
     file_validations.validate_file(file_path)
     @file_path = file_path
-    @pages_with_ip = Hash.new { |h, key| h[key] = [] }
     @views_struct = Struct.new(:views_pages, :task_uniq)
   end
 
@@ -21,14 +20,14 @@ class LogParser
   end
 
   def parse
-    return @pages_with_ip if @pages_with_ip.any?
-
+    pages_with_ip = Hash.new { |h, key| h[key] = [] }
     lines = read_file
     lines.each do |line|
       temp_page, temp_ip = line.split(/\s+/)
-      @pages_with_ip[temp_page] << temp_ip
+      pages_with_ip[temp_page] << temp_ip
     end
-    @pages_with_ip
+
+    pages_with_ip
   end
 
   private
