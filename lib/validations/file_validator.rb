@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-class FileValidations
+class FileValidator
   FILE_EXTENSION = '.log'
-  def validate_file(file_path)
+
+  def validate(file_path)
     right_file_format?(file_path)
     file_exists?(file_path)
     file_not_empty?(file_path)

@@ -20,6 +20,16 @@ require 'simplecov'
 SimpleCov.start do
   add_filter '/spec/'
 end
+
+require_relative '../lib/pages_sorter'
+require_relative '../lib/log_parser'
+require_relative '../lib/pages_data'
+require_relative '../lib/validations/file_validator'
+require_relative '../lib/printers/log_printer_factory'
+require_relative '../lib/printers/base_printer'
+require_relative '../lib/printers/print_unique_views'
+require_relative '../lib/printers/print_most_views'
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -44,7 +54,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  Dir['./spec/support/**/*.rb'].each { |f| require f }
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
   # compatibility in RSpec 3). It causes shared context metadata to be
