@@ -40,6 +40,10 @@ bundle install
 ```bash
 ruby parser.rb webserver.log
 ```
+
+3. An example of the output
+![alt text](https://github.com/lizamuromskaya/logparser/blob/main/example.png)
+
 ## Testing ##
 Run code style tests with [rubocop](https://github.com/rubocop/rubocop)
 ```bash
