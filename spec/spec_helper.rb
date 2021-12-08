@@ -22,6 +22,7 @@ SimpleCov.start do
 end
 
 require_relative '../lib/pages_sorter'
+require_relative '../lib/views_counter'
 require_relative '../lib/log_parser'
 require_relative '../lib/pages_data'
 require_relative '../lib/validations/file_validator'

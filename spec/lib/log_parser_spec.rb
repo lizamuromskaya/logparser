@@ -3,8 +3,9 @@
 require_relative '../spec_helper'
 
 RSpec.describe LogParser do
+  subject(:logparser) { described_class.new(correct_file_path) }
+
   let(:correct_file_path) { 'spec/fixtures/webserver.log' }
-  let(:logparser) { described_class.new(correct_file_path) }
   let(:expected_output_parsed_pages) do
     { '/about' => ['061.945.150.735'],
       '/about/2' => ['444.701.448.104', '444.701.448.104'],

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class BasePrinter
-  attr_reader :result, :views_pages, :space_for_page, :pages
+  attr_reader :result, :views_pages, :space_for_page, :count_views
 
-  def initialize(views_pages, pages, message, result = nil, space_for_page = nil)
+  def initialize(views_pages, message, count_views, result = nil, space_for_page = nil)
     @message = message
     @result = result
     @views_pages = views_pages
     @space_for_page = space_for_page
-    @pages = pages
+    @count_views = count_views
   end
 
   def print_header

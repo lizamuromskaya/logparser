@@ -3,9 +3,9 @@
 require_relative '../../spec_helper'
 
 RSpec.describe FileValidator do
-  let(:validations_rules) { described_class.new.validate(file_path) }
-
   describe '#validate_file' do
+    subject(:validations_rules) { described_class.new.validate(file_path) }
+
     context 'when file is correct' do
       let(:file_path) { 'spec/fixtures/webserver.log' }
 
