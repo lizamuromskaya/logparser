@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class LogParser
+  attr_reader :file_path
+
   def initialize(file_path)
     @file_path = file_path
   end
@@ -20,7 +22,7 @@ class LogParser
 
   def read_file
     lines = []
-    File.open(@file_path, 'r').each do |line|
+    File.open(file_path, 'r').each do |line|
       lines << line.chomp
     end
 
